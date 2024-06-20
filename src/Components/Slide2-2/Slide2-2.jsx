@@ -41,9 +41,32 @@ const Slide23 = () => {
         
           <div className="text-center">
           <Link to="/projectDetails"> 
-          <button type="submit" className="w-full bg-red-950 text-white py-2 rounded-md hover:bg-brown-800 focus:outline-none focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 tablet:text-lg font-bold text-24 leading-32">
-              Proceed for Step 2
-            </button>
+          <button
+            style={{
+              padding: "10px",
+              gap: "10px",
+              borderRadius: "8px",
+              opacity: "0px",
+              background: "rgba(99, 46, 4, 1)",
+              boxShadow: "0px 3px 6px 0px rgba(99, 46, 4, 0.1)",
+
+              boxShadow: "0px 12px 12px 0px rgba(99, 46, 4, 0.09)",
+
+              boxShadow: "0px 26px 16px 0px rgba(99, 46, 4, 0.05)",
+
+              boxShadow: "0px 47px 19px 0px rgba(99, 46, 4, 0.01)",
+
+              boxShadow: "0px 73px 20px 0px rgba(99, 46, 4, 0)",
+              fontWeight: "800",
+              fontSize: "24px",
+              lineHeight: "32.78px",
+              fontFamily: "Manrope",
+              color: "rgba(255, 255, 255, 1)",
+            }}
+            className="w-full px-4 py-2 text-black bg-brown-600 rounded-md focus:outline-none text-white"
+          >
+            Proceed for Step2
+          </button>
           </Link>
           </div>
         </form>

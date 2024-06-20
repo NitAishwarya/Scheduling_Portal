@@ -71,7 +71,7 @@ box-shadow: 0px 70.11px 19.39px 0px rgba(99, 46, 4, 0);
                
                 <div className=" ">
                 <h2  style={{width:'12rem'}} className="text-xl font-semibold  mt-10  relative right-5 {font-family: Manrope;}">
-                  For Channel Partner
+                  For Direct Customer
                 </h2> 
                 </div>
              
