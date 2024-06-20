@@ -59,7 +59,7 @@ box-shadow: 0px 44.75px 17.9px 0px rgba(99, 46, 4, 0.01);
 
 box-shadow: 0px 70.11px 19.39px 0px rgba(99, 46, 4, 0);
 }">
-    <Link to="/channelPartner"> 
+    <Link to="/CustomerPartner"> 
     <div className="flex justify-center mb-4">
                   <img
                     src={pny}
