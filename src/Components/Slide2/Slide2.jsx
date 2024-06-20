@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Slide2 = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: 'rgba(247, 243, 232, 1)' }}>
+    <div className="min-h-screen flex flex-col items-center " style={{ backgroundColor: 'rgba(247, 243, 232, 1)' }}>
       <div className="flex items-center justify-center mb-6">
         <img src={logo} alt="ROF Logo" style={{ width: 139, height: 111, gap: 0, opacity: 1 }} />
       </div>
