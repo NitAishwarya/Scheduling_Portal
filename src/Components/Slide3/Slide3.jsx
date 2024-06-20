@@ -53,7 +53,7 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
           <div className="relative">
             <button
               style={{
-                color:'grey',
+                color: "grey",
                 fontFamily: "Manrope",
                 padding: "12px 24px 12px 24px",
                 gap: "0px",
@@ -114,10 +114,11 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
               padding: "12px 24px 12px 24px",
               gap: "0px",
               borderRadius: "8px",
+              fontSize: "18px",
               justify: "space-between",
               opacity: "0px",
               border: "1.5px solid rgba(53, 53, 53, 0.5)",
-              fontSize: "18px",
+              
             }}
             type="text"
             value={selectedProject ? projectLocations[selectedProject] : ""}
@@ -127,35 +128,34 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
           />
         </div>
         <br />
-        <Link to="/Assignment"> 
-        <button
-          style={{
-            padding: "10px",
-            gap: "10px",
-            borderRadius: "8px",
-            opacity: "0px",
-            background: "rgba(99, 46, 4, 1)",
-            boxShadow: "0px 3px 6px 0px rgba(99, 46, 4, 0.1)",
+        <Link to="/Assignment">
+          <button
+            style={{
+              padding: "10px",
+              gap: "10px",
+              borderRadius: "8px",
+              opacity: "0px",
+              background: "rgba(99, 46, 4, 1)",
+              boxShadow: "0px 3px 6px 0px rgba(99, 46, 4, 0.1)",
 
-            boxShadow: "0px 12px 12px 0px rgba(99, 46, 4, 0.09)",
+              boxShadow: "0px 12px 12px 0px rgba(99, 46, 4, 0.09)",
 
-            boxShadow: "0px 26px 16px 0px rgba(99, 46, 4, 0.05)",
+              boxShadow: "0px 26px 16px 0px rgba(99, 46, 4, 0.05)",
 
-            boxShadow: "0px 47px 19px 0px rgba(99, 46, 4, 0.01)",
+              boxShadow: "0px 47px 19px 0px rgba(99, 46, 4, 0.01)",
 
-            boxShadow: "0px 73px 20px 0px rgba(99, 46, 4, 0)",
-            fontWeight:'800',
-            fontSize:'24px', 
-            lineHeight:'32.78px', 
-            fontFamily:'Manrope',
-            color:'rgba(255, 255, 255, 1)'
-          }}
-          className="w-full px-4 py-2 text-black bg-brown-600 rounded-md focus:outline-none text-white"
-        >
-          Assign Executive
-        </button>
+              boxShadow: "0px 73px 20px 0px rgba(99, 46, 4, 0)",
+              fontWeight: "800",
+              fontSize: "24px",
+              lineHeight: "32.78px",
+              fontFamily: "Manrope",
+              color: "rgba(255, 255, 255, 1)",
+            }}
+            className="w-full px-4 py-2 text-black bg-brown-600 rounded-md focus:outline-none text-white"
+          >
+            Assign Executive
+          </button>
         </Link>
-       
       </div>
     </div>
   );
