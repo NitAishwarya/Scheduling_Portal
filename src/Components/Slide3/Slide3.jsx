@@ -20,7 +20,7 @@ const Slide3 = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center min-h-screen">
       <div className="text-center">
         <img src={Logo} alt="ROF" className="mx-auto mb-4" />
       </div>
