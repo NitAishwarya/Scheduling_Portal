@@ -10,7 +10,7 @@ function Slide1() {
     <> 
     <div className="bg-[#F7F3E8]  w-auto">
       <div className="{text-align:center} w-full h-full    ">
-        <div className="min-h-screen flex flex-col justify-center items-center   ">
+        <div className="min-h-screen flex flex-col    ">
           <div className="  ">
             <img src={Logo} alt="Logo" className="logo" />
           </div>
