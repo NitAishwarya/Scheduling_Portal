@@ -19,6 +19,12 @@ const Slide3 = () => {
     setIsDropdownOpen(false);
   };
 
+  const initValue = {project:"", location:""};
+  const [formValue, setFormValue] = useState(initValue);
+
+ 
+
+
   return (
     <div className="flex flex-col items-center min-h-screen">
       <div className="text-center">
@@ -50,8 +56,9 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
           >
             Project Name
           </label>
-          <div className="relative">
-            <button
+          <div className="relative" >
+            <button 
+              value={formValue.project}
               style={{
                 color: "grey",
                 fontFamily: "Manrope",
@@ -64,6 +71,7 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
               }}
               className="w-full px-4 py-2 text-left bg-white border rounded-md text-black-500 shadow-sm focus:outline-none"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+
             >
               {selectedProject || "Choose Project"}
             </button>
@@ -82,6 +90,7 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
                     key={project}
                     className="px-4 py-2 cursor-pointer hover:bg-gray-200"
                     onClick={() => handleProjectChange(project)}
+                    
                   >
                     {project}
                   </div>
@@ -121,6 +130,7 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
               
             }}
             type="text"
+            required
             value={selectedProject ? projectLocations[selectedProject] : ""}
             readOnly
             placeholder="123, Street Name, City"
@@ -129,7 +139,7 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
         </div>
         <br />
         <Link to="/Assignment">
-          <button
+          <button onSubmit={() =>Submit()}
             style={{
               padding: "10px",
               gap: "10px",
