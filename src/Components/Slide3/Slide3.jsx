@@ -139,7 +139,7 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
         </div>
         <br />
         <Link to="/Assignment">
-          <button onSubmit={() =>Submit()}
+          <button
             style={{
               padding: "10px",
               gap: "10px",
