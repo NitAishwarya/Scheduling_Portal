@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
-
-import logo from '../../Images/ROf Image 1.png';
-import { Link } from 'react-router-dom';
-const Slide23 = () => {
+import React, { useState } from "react";
+import Logo from "../../Images/ROf Image 1.png";
+import { Link } from "react-router-dom";
+const Slide2 = () => {
   const [formData, setFormData] = useState({
-    partnerName: '',
-    companyName: '',
-    customerName: '',
-    customerMobile: ''
+    customerName:"",
+    EmailID: "",
+    mobileNumber: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -16,18 +14,23 @@ const Slide23 = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const validate = () => {
     let validationErrors = {};
-    if (!formData.customerName) validationErrors.customerName = "Customer Name is required";
-    if (!formData.EmailId) validationErrors.EmailId = "Email Id is required";
-    if (!formData.customerMobile) {
-      validationErrors.customerMobile = "Mobile Number are required";
-    } else if (!/^\d{10}$/.test(formData.customerMobile)) {
-      validationErrors.customerMobile = "Mobile Number must be 10 digits";
+    if (!formData.customerName)
+      validationErrors.customerName =
+        "Customer's Name is required";
+    if (!formData.EmailID)
+      validationErrors.EmailID = "Email ID is required";
+    if (!formData.mobileNumber) {
+      validationErrors.mobileNumber =
+        "Last four digits of Customer Mobile Number are required";
+    } else if (!/^\d{4}$/.test(formData.mobileNumber)) {
+      validationErrors.mobileNumber =
+        "Mobile Number must be 10 digits";
     }
     return validationErrors;
   };
@@ -39,70 +42,127 @@ const Slide23 = () => {
       setErrors(validationErrors);
     } else {
       setErrors({});
+      
       console.log("Form submitted successfully", formData);
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: 'rgba(247, 243, 232, 1)' }}>
+    <div
+      className="min-h-screen flex flex-col items-center justify-center"
+      style={{ backgroundColor: "rgba(247, 243, 232, 1)" }}
+    >
       <div className="flex items-center justify-center mb-6">
-      <img src={logo} alt="ROF Logo" style={{ width: 139, height: 111, gap: 0, opacity: 1 }} />
+        <img
+          src={Logo}
+          alt="ROF Logo"
+          style={{ width: 139, height: 111, gap: 0, opacity: 1 }}
+        />
       </div>
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md ml-4 tablet:max-w-lg tablet:p-8">
         <form onSubmit={handleSubmit}>
-         
           <div className="mb-4 tablet:mb-6">
-            <label className="block text-gray-700 font-bold mb-2 text-base tablet:text-lg" style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 700, lineHeight: '24.59px', textAlign: 'left' }}>
-              Customer Name
+            <label
+              className="block text-gray-700 font-bold mb-2 text-base tablet:text-lg"
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "18px",
+                fontWeight: 700,
+                lineHeight: "24.59px",
+                textAlign: "left",
+              }}
+            >
+               Company Name
             </label>
             <input
               type="text"
+              required
               name="customerName"
               value={formData.customerName}
               onChange={handleChange}
               className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 tablet:text-lg"
               placeholder="John Doe"
-              style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 500, lineHeight: '24.59px', textAlign: 'left' }}
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "18px",
+                fontWeight: 400,
+                lineHeight: "24.59px",
+                textAlign: "left",
+              }}
             />
-            {errors.customerName && <p className="text-red-500 text-sm">{errors.customerName}</p>}
+            {errors.customerName && (
+              <p className="text-red-500 text-sm">{errors.customerName}</p>
+            )}
           </div>
-
           <div className="mb-4 tablet:mb-6">
-            <label className="block text-gray-700 font-bold mb-2 text-base tablet:text-lg" style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 700, lineHeight: '24.59px', textAlign: 'left' }}>
-              Email Id
-            </label>
-            <input
-              type="email"
-              name="EmailId"
-              value={formData.EmailId}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 tablet:text-lg"
-              placeholder="Acme Relators"
-              style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 500, lineHeight: '24.59px', textAlign: 'left' }}
-            />
-            {errors.EmailId && <p className="text-red-500 text-sm">{errors.EmailId}</p>}
-          </div>
-
-          <div className="mb-4 tablet:mb-6">
-            <label className="block text-gray-700 font-bold mb-2 text-base tablet:text-lg" style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 700, lineHeight: '24.59px', textAlign: 'left' }}>
-              Mobile Number
+            <label
+              className="block text-gray-700 font-bold mb-2 text-base tablet:text-lg"
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "18px",
+                fontWeight: 700,
+                lineHeight: "24.59px",
+                textAlign: "left",
+              }}
+            >
+              Email ID
             </label>
             <input
               type="text"
-              name="customerMobile"
-              value={formData.customerMobile}
+              name="EmailID"
+              required
+              value={formData.EmailID}
               onChange={handleChange}
               className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 tablet:text-lg"
-              placeholder="1234"
-              style={{ fontFamily: 'Manrope', fontSize: '18px', fontWeight: 500, lineHeight: '24.59px', textAlign: 'left' }}
+              placeholder="Acme Relators"
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "18px",
+                fontWeight: 400,
+                lineHeight: "24.59px",
+                textAlign: "left",
+              }}
             />
-            {errors.customerMobile && <p className="text-red-500 text-sm">{errors.customerMobile}</p>}
+            {errors.EmailID && (
+              <p className="text-red-500 text-sm">{errors.EmailID}</p>
+            )}
+          </div>
+          <div className="mb-4 tablet:mb-6">
+            <label
+              className="block text-gray-700 font-bold mb-2 text-base tablet:text-lg"
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "18px",
+                fontWeight: 700,
+                lineHeight: "24.59px",
+                textAlign: "left",
+              }}
+            >
+               Mobile No
+            </label>
+            <input
+              type="text"
+              required
+              name="mobileNumber"
+              value={formData.mobileNumber}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 tablet:text-lg"
+              placeholder="John Doe"
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "18px",
+                fontWeight: 400,
+                lineHeight: "24.59px",
+                textAlign: "left",
+              }}
+            />
+            {errors.mobileNumber && (
+              <p className="text-red-500 text-sm">{errors.mobileNumber}</p>
+            )}
           </div>
           <div className="text-center">
-           
-       
-
-        <button
+            <Link to="/projectDetails">
+            <button
             style={{
               padding: "10px",
               gap: "10px",
@@ -119,13 +179,12 @@ const Slide23 = () => {
           >
             Proceed for Step2
           </button>
-         
-        
+            </Link>
           </div>
         </form>
       </div>
     </div>
   );
-}
+};
 
-export default Slide23;
+export default Slide2;
