@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Logo from "../../Images/ROf Image 1.png";
 import { Link } from "react-router-dom";
-const Slide2 = () => {
+
+
+const Slide23 = () => {
   const [formData, setFormData] = useState({
     customerName:"",
     EmailID: "",
@@ -28,7 +30,7 @@ const Slide2 = () => {
     if (!formData.mobileNumber) {
       validationErrors.mobileNumber =
         "Last four digits of Customer Mobile Number are required";
-    } else if (!/^\d{4}$/.test(formData.mobileNumber)) {
+    } else if (!/^\d{10}$/.test(formData.mobileNumber)) {
       validationErrors.mobileNumber =
         "Mobile Number must be 10 digits";
     }
@@ -40,10 +42,13 @@ const Slide2 = () => {
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
+    
     } else {
       setErrors({});
       
       console.log("Form submitted successfully", formData);
+      alert("Form submitted successfully");
+      window.location.assign("/projectDetails");
     }
   };
 
@@ -161,7 +166,6 @@ const Slide2 = () => {
             )}
           </div>
           <div className="text-center">
-            <Link to="/projectDetails">
             <button
             style={{
               padding: "10px",
@@ -179,7 +183,6 @@ const Slide2 = () => {
           >
             Proceed for Step2
           </button>
-            </Link>
           </div>
         </form>
       </div>
@@ -187,4 +190,4 @@ const Slide2 = () => {
   );
 };
 
-export default Slide2;
+export default Slide23;

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../Images/ROf Image 1.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+
+
 const Slide2 = () => {
   const [formData, setFormData] = useState({
     partnerName: "",
@@ -8,6 +10,7 @@ const Slide2 = () => {
     customerName: "",
     customerMobile: "",
   });
+
 
   const [errors, setErrors] = useState({});
 
@@ -17,6 +20,7 @@ const Slide2 = () => {
       ...formData,
       [name]: value,
     });
+
   };
 
   const validate = () => {
@@ -36,19 +40,39 @@ const Slide2 = () => {
         "Customer Mobile Number must be 4 digits";
     }
     return validationErrors;
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
+      
       setErrors(validationErrors);
+     
+
+
     } else {
       setErrors({});
-      
+
       console.log("Form submitted successfully", formData);
+      alert("Form submitted successfully");
+      window.location.assign("/projectDetails");
+
+
     }
   };
+
+
+  // if(isfilled){
+
+  // }
+
+  // else{
+  //   setErrors({});
+  //   console.log("Form submitted successfully", formData);
+
+  // }
 
   return (
     <div
@@ -63,7 +87,8 @@ const Slide2 = () => {
         />
       </div>
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md ml-4 tablet:max-w-lg tablet:p-8">
-        <form onSubmit={handleSubmit}>
+        <form             onSubmit={handleSubmit}
+        >
           <div className="mb-4 tablet:mb-6">
             <label
               className="block text-gray-700 font-bold mb-2 text-base tablet:text-lg"
@@ -197,9 +222,8 @@ const Slide2 = () => {
             )}
           </div>
           <div className="text-center">
-            <Link to="/projectDetails">
+       
             <button
-            
             style={{
               padding: "10px",
               gap: "10px",
@@ -216,7 +240,7 @@ const Slide2 = () => {
           >
             Proceed for Step2
           </button>
-            </Link>
+
           </div>
         </form>
       </div>

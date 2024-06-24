@@ -13,7 +13,7 @@ const Routest = () => {
           <Route path="/" element={<Slide1/>} />
           <Route path="/channelPartner" element={<Slide2 />} />
           <Route path="/CustomerPartner" element={<Slide23 />} />
-          <Route path="/projectDetails" element={<Slide3 />} />
+         <Route path="/projectDetails" element={<Slide3 />} />
           <Route path="/Assignment" element={<Slide4 />} />
         
         </Routes>

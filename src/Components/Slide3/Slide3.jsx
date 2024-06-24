@@ -22,6 +22,19 @@ const Slide3 = () => {
   const initValue = {project:"", location:""};
   const [formValue, setFormValue] = useState(initValue);
 
+  const Submit=() =>{
+    if(selectedProject != 0){
+      alert("Form Submited")
+      return window.location.assign("/Assignment");
+    }
+
+    else{
+      alert("Fill the Form")  
+    console.error("Fill the Form");
+    }
+   
+  }
+ 
  
 
 
@@ -138,8 +151,8 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
           />
         </div>
         <br />
-        <Link to="/Assignment">
           <button
+            onClick={Submit}
             style={{
               padding: "10px",
               gap: "10px",
@@ -165,7 +178,7 @@ box-shadow: 0px 254px 71px 0px rgba(130, 71, 23, 0);
           >
             Assign Executive
           </button>
-        </Link>
+      
       </div>
     </div>
   );
